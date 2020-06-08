@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // .map(), .reduce() y .filter() no mutan el array original
+
+        // .filter() retorna un nuevo array de la misma longitud o inferior que el original
+        // La función argumentada debe retornar truthy (el elemento pasa al nuevo array) o falsie (el elemento no pasa al nuevo array)
+
+
+        // Example 1
+        const ages = [4, 38, 49, 48, 95, 2, 50, 3, 62, 40, 937, 45, 8]
+        const oldies = ages.filter(elm => elm > 18)
+
+        console.log(oldies)
+
+
+
+
+        // Example 2
+        const odd = ages.filter(elm => elm % 2 === 0)
+        console.log(odd)
+
+
+
+
+        // Example 3
+        const people = [
+            { name: "Candice", age: 25 },
+            { name: "Tammy", age: 30 },
+            { name: "Allen", age: 20 },
+            { name: "Nettie", age: 21 },
+            { name: "Stuart", age: 17 },
+            { name: "Bill", age: 19 }
+        ]
+
+        const admitted = people.filter(elm => elm.age >= 21)
+        console.log(admitted)
+
+
+
+
+        // Example 4
+        const places = [
+            {
+                title: "Awesome Suite 20' away from la Rambla",
+                price: 200,
+                type: "Private Room",
+                pool: true,
+                garage: false
+            },
+            {
+                title: "Private apartment",
+                price: 190,
+                type: "Entire Place",
+                pool: true,
+                garage: true
+            },
+            {
+                title: "Apartment with awesome views",
+                price: 400,
+                type: "Entire Place",
+                pool: false,
+                garage: false
+            },
+            {
+                title: "Apartment in la Rambla",
+                price: 150,
+                type: "Private Room",
+                pool: false,
+                garage: true
+            },
+            {
+                title: "Comfortable place in Barcelona´s center",
+                price: 390,
+                type: "Entire place",
+                pool: true,
+                garage: true
+            },
+            {
+                title: "Room near Sagrada Familia",
+                price: 170,
+                type: "Private Room",
+                pool: false,
+                garage: false
+            },
+            {
+                title: "Great house next to Camp Nou",
+                price: 140,
+                type: "Entire place",
+                pool: true,
+                garage: true
+            },
+            {
+                title: "New apartment with 2 beds",
+                price: 2000,
+                type: "Entire place",
+                pool: false,
+                garage: true
+            }
+        ]
+
+
+        const cheapestProperties = places.filter(elm => elm.price <= 350)
+        console.log('Las baratas:', cheapestProperties)
+
+
+        const poolPoperties = places.filter(elm => elm.pool)
+        console.log('Las de pisci:', poolPoperties)
+
+
+        const megaFilter = places.filter(elm => elm.type === "Entire place" && elm.pool === false && elm.garage)
+        // const megaFilter = places.filter(elm => elm.type === "Entire place" && !elm.pool && elm.garage)
+        console.log('El superfiltro:', megaFilter)
+
+
+
+    </script>
+
+</body>
+
+</html>

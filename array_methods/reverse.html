@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // .reverse() SÍ MUTA el array original
+        const originalArray = ['one', 'two', 'three'];
+        const fakeCopy = originalArray      // Paso por referencia
+        const fakeRevsersed = fakeCopy.reverse()
+
+        console.log(originalArray);         // ['three', 'two', 'one']
+        console.log(fakeRevsersed);      // ['three', 'two', 'one']
+
+
+
+
+        // Copia! Yay! :3
+        const originalArray2 = ['one', 'two', 'three'];
+        const realCopy = [...originalArray2]
+        const realRevsersed = realCopy.reverse()
+
+        console.log(originalArray2);         // ['one', 'two', 'three']
+        console.log(realCopy);               // ['three', 'two', 'one']
+
+    </script>
+</body>
+
+</html>

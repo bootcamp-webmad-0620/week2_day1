@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // .map(), .reduce() y .filter() no mutan el array original, retornan un nuevo array
+        // .map() retorna un nuevo array de la misma longitud que el original resultante del retorno de la función aplicada a cada mapeo
+
+
+
+
+
+
+
+        // Example 1
+        const names = ['charini', 'ger', 'luciana']
+        // const upperNames = names.map(elm => {
+        //     return elm.charAt(0).toUpperCase() + elm.substring(1)
+        // })
+
+        // Equivalencia:
+        const upperNames = names.map(elm => elm.charAt(0).toUpperCase() + elm.substring(1))
+        console.log(upperNames)
+
+
+
+
+
+
+
+
+        // Example 2
+        const numbers = [10, 20, 30]
+        const doubledNumbers = numbers.map(elm => elm * 2)
+        console.log(doubledNumbers)
+
+
+
+
+
+
+
+
+        // Example 3
+
+        const students = [
+            {
+                name: "Tony Parker",
+                firstProject: 80,
+                secondProject: 75,
+                finalExam: 90
+            },
+            {
+                name: "Marc Barchini",
+                firstProject: 84,
+                secondProject: 65,
+                finalExam: 65
+            },
+            {
+                name: "Claudia Lopez",
+                firstProject: 45,
+                secondProject: 95,
+                finalExam: 99
+            },
+            {
+                name: "Alvaro Briattore",
+                firstProject: 82,
+                secondProject: 92,
+                finalExam: 70
+            },
+            {
+                name: "Isabel Ortega",
+                firstProject: 90,
+                secondProject: 32,
+                finalExam: 85
+            }
+        ]
+
+
+        const results = students.map(elm => {
+            const projectsAvg = (elm.firstProject + elm.secondProject) / 2
+            const finalGrade = elm.finalExam * 0.6 + projectsAvg * 0.4
+            return {
+                ...elm,                 // Copia del objeto inicial
+                grade: finalGrade
+            }
+        })
+
+        console.log("Los resultados de lso alumnos son: ", results)
+
+
+    </script>
+
+</body>
+
+</html>

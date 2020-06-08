@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // .map(), .reduce() y .filter() no mutan el array original
+
+        // .reduce() obtiene un valor final fruto de computar un acumulado en cada iteración sobre el array original
+
+        // El valor inicial del acumulador es la primera posición del array, OJO: o el valor de sus segundo argumento, si lo hubiese
+        // El valor del acumulador en las siguientes iteraciones es el retorno de la anterior iteración 
+
+
+
+        const numbers = [1, 2, 3, 4, 5]
+
+
+        // // Explanation
+        // console.log("El array es:", numbers)
+        // const reduceExplained = numbers.reduce((acc, elm) => {
+        //     console.log("El valor del acumulador es " + acc)
+        //     console.log("El valor del elemento iterado es " + elm)
+        //     console.log("El retorno de esta función será ", acc + elm)
+        //     console.log('------------------')
+        //     return acc + elm
+        // })
+        // console.log('Resultado:', reduceExplained)
+
+
+
+        const numbersSum1 = numbers.reduce((acc, elm) => acc + elm)
+        console.log('Resultado 1:', numbersSum1)
+
+
+
+
+        const people = [
+            { name: "Candice", age: 25 },
+            { name: "Tammy", age: 30 },
+            { name: "Allen", age: 49 },
+            { name: "Nettie", age: 21 },
+            { name: "Stuart", age: 17 }
+        ]
+
+        // // First try 
+        // const sumAges = people.reduce((acc, elm) => acc + elm)
+
+
+        // // Second try (takes first object as first accumulator... D: )
+        // const sumAges = people.reduce((acc, elm) => acc + elm.age)
+
+
+        // Final try (reduce accepts an additional second argument as first value for the accumulator)
+        // const sumAges = people.reduce((acc, elm) => acc + elm.age, 0)
+        const sumAges = people.reduce((acc, elm) => {
+            return acc + elm.age
+        }, 0)
+
+        console.log("Resultado 2:", sumAges)
+
+
+
+
+
+
+
+        const product = {
+            name: "AmazonBasics Apple Certified Lightning to USB Cable",
+            price: 7.99,
+            manufacter: "Amazon",
+            reviews:
+                [
+                    {
+                        user: "Pavel Nedved",
+                        comments: "It was really usefull, strongly recommended",
+                        rate: 4
+                    },
+                    {
+                        user: "Alvaro Trezeguet",
+                        comments: "It lasted 2 days",
+                        rate: 1
+                    },
+                    {
+                        user: "David Recoba",
+                        comments: "Awesome",
+                        rate: 5
+                    },
+                    {
+                        user: "Jose Romero",
+                        comments: "Good value for money",
+                        rate: 4
+                    },
+                    {
+                        user: "Antonio Cano",
+                        comments: "It broked really fast",
+                        rate: 2
+                    },
+                ]
+        }
+
+        const totalReviews = product.reviews.length
+        const sumReviews = product.reviews.reduce((acc, elm) => acc + elm.rate, 0)
+        console.log("La puntuación media es", sumReviews / totalReviews)
+
+
+
+    </script>
+
+</body>
+
+</html>

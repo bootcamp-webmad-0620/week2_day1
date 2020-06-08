@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // .sort() SÍ MUTA el array original
+        const numbers = [22, 23, 99, 68, 1, 0, 9, 112, 223, 64, 18]
+
+
+        // // .sort() comparea valores por parejas
+        // numbers.sort((a, b) => console.log('está comparando', a, 'y', b))
+        numbers.sort()
+        console.log(numbers)
+
+
+        const realSort1 = [...numbers].sort((a, b) => a - b)
+        console.log(realSort1)
+
+
+        const reverseSort = [...numbers].sort((a, b) => b - a)
+        console.log(reverseSort)
+
+
+        const words = ["Hello", "Goodbye", "First", "A", "a", "Second", "Third"]
+        words.sort()
+        console.log(words)
+
+
+    </script>
+</body>
+
+</html>
